@@ -29,8 +29,14 @@ class Form extends Component {
 
     return (
       <form action="">
-        <Name cardName={ cardName } onInputChange={ onInputChange } />
-        <Description />
+        <Name
+          cardName={ cardName }
+          onInputChange={ onInputChange }
+        />
+        <Description
+          cardDescription={ cardDescription }
+          onInputChange={ onInputChange }
+        />
         <Attr1 />
         <Attr2 />
         <Attr3 />
