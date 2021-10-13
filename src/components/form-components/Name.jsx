@@ -10,7 +10,7 @@ class Name extends Component {
 
     return (
       <div>
-        <label htmlFor="name">
+        <label className="inputs" htmlFor="name">
           Nome
           <input
             type="text"

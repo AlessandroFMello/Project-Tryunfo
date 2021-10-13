@@ -10,7 +10,7 @@ class Attr3 extends Component {
 
     return (
       <div>
-        <label htmlFor="attr3">
+        <label className="inputs" htmlFor="attr3">
           Atributo 3
           <input
             type="number"

@@ -9,7 +9,7 @@ class Rare extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="inputs">
         Raridade
         <select
           id="rare"

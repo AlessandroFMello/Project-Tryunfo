@@ -1,0 +1,18 @@
+#main-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.section-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  background-color: green;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}

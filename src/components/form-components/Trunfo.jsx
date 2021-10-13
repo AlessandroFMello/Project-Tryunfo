@@ -10,7 +10,7 @@ class Trunfo extends Component {
 
     return (
       <div>
-        <label htmlFor="trunfo">
+        <label className="inputs" htmlFor="trunfo">
           Trunfo
           <input
             type="checkbox"

@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import './App.css';
 
 const formProps = {
   cardName: '',
@@ -35,9 +36,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Tryunfo</h1>
-        <Form { ...this.state } onInputChange={ this.onInputChange } />
+      <div id="main-div">
+        <section className="section-board">
+          <h1>Tryunfo</h1>
+          <Form { ...this.state } onInputChange={ this.onInputChange } />
+        </section>
       </div>
     );
   }

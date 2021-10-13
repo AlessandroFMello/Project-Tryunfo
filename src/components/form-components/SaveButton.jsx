@@ -9,7 +9,7 @@ class SaveButton extends Component {
     } = this.props;
 
     return (
-      <div id="save-button">
+      <div className="inputs" id="save-button">
         <button
           type="submit"
           data-testid="save-button"

@@ -9,7 +9,7 @@ class Description extends Component {
     } = this.props;
     return (
       <div>
-        <label htmlFor="description">
+        <label className="inputs" htmlFor="description">
           Descrição
           <input
             type="textarea"

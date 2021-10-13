@@ -10,7 +10,7 @@ class Image extends Component {
 
     return (
       <div>
-        <label htmlFor="image">
+        <label className="inputs" htmlFor="image">
           Imagem
           <input
             type="text"
