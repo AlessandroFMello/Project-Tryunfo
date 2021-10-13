@@ -41,12 +41,29 @@ class Form extends Component {
           cardAttr1={ cardAttr1 }
           onInputChange={ onInputChange }
         />
-        <Attr2 />
-        <Attr3 />
-        <Image />
-        <Rare />
-        <Trunfo />
-        <SaveButton />
+        <Attr2
+          cardAttr2={ cardAttr2 }
+          onInputChange={ onInputChange }
+        />
+        <Attr3
+          cardAttr3={ cardAttr3 }
+          onInputChange={ onInputChange }
+        />
+        <Image
+          cardAtcardImagetr1={ cardImage }
+          onInputChange={ onInputChange }
+        />
+        <Rare
+          cardRare={ cardRare }
+        />
+        <Trunfo
+          cardTrunfo={ cardTrunfo }
+          onInputChange={ onInputChange }
+        />
+        <SaveButton
+          onSaveButtonClick={ onSaveButtonClick }
+          onInputChange={ onInputChange }
+        />
       </form>
     );
   }
