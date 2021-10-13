@@ -2,25 +2,23 @@ import React from 'react';
 import Form from './components/Form';
 import './App.css';
 
-const formProps = {
-  cardName: '',
-  cardDescription: '',
-  cardAttr1: '',
-  cardAttr2: '',
-  cardAttr3: '',
-  cardImage: '',
-  cardRare: '',
-  cardTrunfo: '',
-  hasTrunfo: true,
-  isSaveButtonDisabled: false,
-  onInputChange: () => {},
-  onSaveButtonClick: () => {},
-};
-
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { ...formProps };
+    this.state = {
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: '',
+      hasTrunfo: true,
+      isSaveButtonDisabled: false,
+      onInputChange: () => {},
+      onSaveButtonClick: () => {},
+    };
 
     this.onInputChange = this.onInputChange.bind(this);
   }
