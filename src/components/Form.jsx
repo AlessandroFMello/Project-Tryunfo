@@ -37,7 +37,10 @@ class Form extends Component {
           cardDescription={ cardDescription }
           onInputChange={ onInputChange }
         />
-        <Attr1 />
+        <Attr1
+          cardAttr1={ cardAttr1 }
+          onInputChange={ onInputChange }
+        />
         <Attr2 />
         <Attr3 />
         <Image />
