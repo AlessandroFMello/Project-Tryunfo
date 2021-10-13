@@ -6,7 +6,12 @@ class Name extends Component {
       <div>
         <label htmlFor="name">
           Nome
-          <input type="text" id="name" data-testid="name-input" />
+          <input
+            type="text"
+            id="name"
+            data-testid="name-input"
+            value={ cardName }
+          />
         </label>
       </div>
     );
