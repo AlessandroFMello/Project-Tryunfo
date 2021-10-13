@@ -55,6 +55,7 @@ class Form extends Component {
         />
         <Rare
           cardRare={ cardRare }
+          onInputChange={ onInputChange }
         />
         <Trunfo
           cardTrunfo={ cardTrunfo }
