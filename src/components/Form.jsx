@@ -50,7 +50,7 @@ class Form extends Component {
           onInputChange={ onInputChange }
         />
         <Image
-          cardAtcardImagetr1={ cardImage }
+          cardImage={ cardImage }
           onInputChange={ onInputChange }
         />
         <Rare
