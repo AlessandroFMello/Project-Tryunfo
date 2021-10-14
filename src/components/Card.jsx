@@ -23,6 +23,9 @@ class Card extends Component {
         <h2 data-testid="name-card">{ cardName }</h2>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <h3 data-testid="description-card">{ cardDescription }</h3>
+        <h3 data-testid="attr1-card">{ cardAttr1 }</h3>
+        <h3 data-testid="attr2-card">{ cardAttr2 }</h3>
+        <h3 data-testid="attr3-card">{ cardAttr3 }</h3>
       </section>
     );
   }
