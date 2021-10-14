@@ -34,7 +34,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="main-div">
+      <div className="main-div">
         <section className="section-board">
           <h1>Tryunfo</h1>
           <Form { ...this.state } onInputChange={ this.onInputChange } />
