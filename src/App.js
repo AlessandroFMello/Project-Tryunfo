@@ -38,11 +38,11 @@ class App extends React.Component {
       <div className="main-div">
         <h1>Tryunfo</h1>
         <div className="main-section">
-          <section className="section-form">
+          <section className="section-board">
             <Form { ...this.state } onInputChange={ this.onInputChange } />
           </section>
-          <section className="section-card">
-            <Card />
+          <section className="section-board">
+            <Card { ...this.state } />
           </section>
         </div>
       </div>
