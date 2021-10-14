@@ -18,6 +18,7 @@ class Description extends Component {
             name="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
+            required
           />
         </label>
       </div>

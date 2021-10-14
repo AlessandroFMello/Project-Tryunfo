@@ -19,6 +19,9 @@ class Attr1 extends Component {
             name="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            maxLength="90"
+            max="90"
+            required
           />
         </label>
       </div>

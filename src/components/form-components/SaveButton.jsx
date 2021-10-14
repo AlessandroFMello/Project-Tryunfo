@@ -15,6 +15,7 @@ class SaveButton extends Component {
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
+          required
         >
           Salvar
         </button>

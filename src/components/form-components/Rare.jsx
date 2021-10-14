@@ -17,6 +17,7 @@ class Rare extends Component {
           name="cardRare"
           value={ cardRare }
           onChange={ onInputChange }
+          required
         >
           <option value="normal">Normal</option>
           <option value="raro">Raro</option>

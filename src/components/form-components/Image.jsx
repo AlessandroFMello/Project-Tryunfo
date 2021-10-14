@@ -19,6 +19,7 @@ class Image extends Component {
             name="cardImage"
             value={ cardImage }
             onChange={ onInputChange }
+            required
           />
         </label>
       </div>

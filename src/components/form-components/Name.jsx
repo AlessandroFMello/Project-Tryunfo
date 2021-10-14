@@ -19,6 +19,7 @@ class Name extends Component {
             name="cardName"
             value={ cardName }
             onChange={ onInputChange }
+            required
           />
         </label>
       </div>
