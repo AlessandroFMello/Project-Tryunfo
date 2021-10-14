@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import Card from './components/Card';
 import './App.css';
 
 class App extends React.Component {
@@ -35,10 +36,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-div">
-        <section className="section-board">
-          <h1>Tryunfo</h1>
-          <Form { ...this.state } onInputChange={ this.onInputChange } />
-        </section>
+        <h1>Tryunfo</h1>
+        <div className="main-section">
+          <section className="section-form">
+            <Form { ...this.state } onInputChange={ this.onInputChange } />
+          </section>
+          <section className="section-card">
+            <Card />
+          </section>
+        </div>
       </div>
     );
   }
