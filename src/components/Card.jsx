@@ -22,6 +22,7 @@ class Card extends Component {
       <section>
         <h2 data-testid="name-card">{ cardName }</h2>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+        <h3 data-testid="description-card">{ cardDescription }</h3>
       </section>
     );
   }
