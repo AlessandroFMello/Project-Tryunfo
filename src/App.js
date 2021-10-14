@@ -9,22 +9,22 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: '',
+      deck: [],
       hasTrunfo: true,
       isSaveButtonDisabled: true,
-      onInputChange: () => {},
-      onSaveButtonClick: () => {},
     };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.activateSaveButton = this.activateSaveButton.bind(this);
     this.checkAttrValues = this.checkAttrValues.bind(this);
     this.checkIfAllFulfilled = this.checkIfAllFulfilled.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -34,6 +34,28 @@ class App extends React.Component {
     this.setState({
       [name]: value,
     }, this.activateSaveButton); // Cuidar assincronicidade
+  }
+
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+
+    this.setState((previousState) => {
+      const card = { ...previousState };
+      delete card.deck;
+
+      return {
+        deck: [...previousState.deck, card],
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: '',
+        isSaveButtonDisabled: true,
+      };
+    });
   }
 
   activateSaveButton = () => {
@@ -82,7 +104,11 @@ class App extends React.Component {
         <h1>Tryunfo</h1>
         <div className="main-section">
           <section className="section-board">
-            <Form { ...this.state } onInputChange={ this.onInputChange } />
+            <Form
+              { ...this.state }
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
           </section>
           <section className="section-board">
             <Card { ...this.state } />
