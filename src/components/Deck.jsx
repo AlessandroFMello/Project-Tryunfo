@@ -7,7 +7,7 @@ class Deck extends Component {
     const { deck } = this.props;
     return (
       <div>
-        <h1>Teste</h1>
+        <h1>Deck</h1>
         <section>
           {
             deck.map((card) => <DeckCard key={ card.cardName } card={ card } />)

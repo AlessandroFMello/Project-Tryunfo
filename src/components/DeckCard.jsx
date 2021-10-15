@@ -5,7 +5,7 @@ class DeckCard extends Component {
   render() {
     const { card } = this.props;
     return (
-      <div className="section-board">
+      <div className="card">
         <h3>{ card.cardName }</h3>
         <img src={ card.cardImage } alt={ card.cardName } />
         <h3>{ card.cardDescription }</h3>

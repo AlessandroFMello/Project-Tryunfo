@@ -19,6 +19,7 @@ class Attr2 extends Component {
             name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            min="0"
             max="90"
             maxLength="90"
             required
