@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Deck from './components/Deck';
 import './App.css';
 
 class App extends React.Component {
@@ -119,6 +120,9 @@ class App extends React.Component {
             <Card { ...this.state } />
           </section>
         </div>
+        <section className="deck-section">
+          <Deck { ...this.state } />
+        </section>
       </div>
     );
   }
