@@ -7,7 +7,6 @@ import Attr2 from './form-components/Attr2';
 import Attr3 from './form-components/Attr3';
 import Image from './form-components/Image';
 import Rare from './form-components/Rare';
-import Trunfo from './form-components/Trunfo';
 import SaveButton from './form-components/SaveButton';
 
 class Form extends Component {
@@ -20,11 +19,10 @@ class Form extends Component {
       cardAttr3,
       cardImage,
       cardRare,
-      cardTrunfo,
-      // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
+      renderTrunfoHTML,
     } = this.props;
 
     return (
@@ -57,10 +55,7 @@ class Form extends Component {
           cardRare={ cardRare }
           onInputChange={ onInputChange }
         />
-        <Trunfo
-          cardTrunfo={ cardTrunfo }
-          onInputChange={ onInputChange }
-        />
+        { renderTrunfoHTML() }
         <SaveButton
           onSaveButtonClick={ onSaveButtonClick }
           isSaveButtonDisabled={ isSaveButtonDisabled }
@@ -80,8 +75,7 @@ Form.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  renderTrunfoHTML: PropTypes.func.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
