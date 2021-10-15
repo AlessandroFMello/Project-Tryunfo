@@ -1,8 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
-import Trunfo from './components/form-components/Trunfo';
-import HasTrunfo from './components/form-components/HasTrunfo';
 import './App.css';
 
 class App extends React.Component {
@@ -26,7 +24,6 @@ class App extends React.Component {
     this.checkAttrValues = this.checkAttrValues.bind(this);
     this.checkIfAllFulfilled = this.checkIfAllFulfilled.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.renderTrunfoHTML = this.renderTrunfoHTML.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -106,19 +103,6 @@ class App extends React.Component {
     } return false;
   }
 
-  renderTrunfoHTML = () => {
-    const { hasTrunfo, cardTrunfo } = this.state;
-    if (hasTrunfo) {
-      return <HasTrunfo />;
-    }
-    return (
-      <Trunfo
-        cardTrunfo={ cardTrunfo }
-        onInputChange={ this.onInputChange }
-      />
-    );
-  }
-
   render() {
     return (
       <div className="main-div">
@@ -129,7 +113,6 @@ class App extends React.Component {
               { ...this.state }
               onInputChange={ this.onInputChange }
               onSaveButtonClick={ this.onSaveButtonClick }
-              renderTrunfoHTML={ this.renderTrunfoHTML }
             />
           </section>
           <section className="section-board">
