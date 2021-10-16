@@ -25,6 +25,7 @@ class App extends React.Component {
     this.checkAttrValues = this.checkAttrValues.bind(this);
     this.checkIfAllFulfilled = this.checkIfAllFulfilled.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.deleteCardByName = this.deleteCardByName.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -34,6 +35,22 @@ class App extends React.Component {
     this.setState({
       [name]: value,
     }, this.activateSaveButton); // Cuidar assincronicidade
+  }
+
+  deleteCardByName = ({ target }) => {
+    const { id } = target;
+    const { deck } = this.state;
+    deck.forEach((card) => {
+      if (card.cardTrunfo === true && card.cardName === id) {
+        this.setState({
+          hasTrunfo: false,
+        });
+      }
+    });
+    const newDeck = deck.filter((card) => card.cardName !== id);
+    this.setState({
+      deck: [...newDeck],
+    });
   }
 
   onSaveButtonClick = (event) => {
@@ -121,7 +138,7 @@ class App extends React.Component {
           </section>
         </div>
         <section className="deck-section">
-          <Deck { ...this.state } />
+          <Deck { ...this.state } deleteCardByName={ this.deleteCardByName } />
         </section>
       </div>
     );
