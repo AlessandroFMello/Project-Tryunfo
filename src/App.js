@@ -18,6 +18,8 @@ class App extends React.Component {
       cardTrunfo: false,
       deck: [],
       isSaveButtonDisabled: true,
+      filteredDeck: [],
+      hasFilter: false,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -26,6 +28,7 @@ class App extends React.Component {
     this.checkIfAllFulfilled = this.checkIfAllFulfilled.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.deleteCardByName = this.deleteCardByName.bind(this);
+    this.filterByName = this.filterByName.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -121,6 +124,28 @@ class App extends React.Component {
     } return false;
   }
 
+  filterByName = ({ target }) => {
+    const { value } = target;
+    const { deck } = this.state;
+    const filteredDeck = [];
+    deck.forEach((card) => {
+      if (card.cardName.includes(value)) {
+        filteredDeck.push(card);
+      }
+      this.setState({
+        hasFilter: true,
+        filteredDeck: [...filteredDeck],
+      });
+    });
+    if (!value) {
+      this.setState({ hasFilter: false });
+    }
+  }
+
+  filterByRarity = () => {}
+
+  filterByTrunfo = () => {}
+
   render() {
     return (
       <div className="main-div">
@@ -137,8 +162,24 @@ class App extends React.Component {
             <Card { ...this.state } />
           </section>
         </div>
+        <h1>Deck</h1>
+        <form>
+          Filtros de busca
+          <label className="inputs" htmlFor="name-filter">
+            <input
+              type="text"
+              id="name-filter"
+              data-testid="name-filter"
+              placeholder="Nome da Carta"
+              onChange={ this.filterByName }
+            />
+          </label>
+        </form>
         <section className="deck-section">
-          <Deck { ...this.state } deleteCardByName={ this.deleteCardByName } />
+          <Deck
+            { ...this.state }
+            deleteCardByName={ this.deleteCardByName }
+          />
         </section>
       </div>
     );
