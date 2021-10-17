@@ -29,6 +29,7 @@ class App extends React.Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.deleteCardByName = this.deleteCardByName.bind(this);
     this.filterByName = this.filterByName.bind(this);
+    this.filterByRarity = this.filterByRarity.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -142,7 +143,24 @@ class App extends React.Component {
     }
   }
 
-  filterByRarity = () => {}
+  filterByRarity = ({ target }) => {
+    const { value } = target;
+    const { deck } = this.state;
+    const filteredDeck = [];
+
+    deck.forEach((card) => {
+      if (card.cardRare.toLowerCase() === value.toLowerCase()) {
+        filteredDeck.push(card);
+      }
+      this.setState({
+        hasFilter: true,
+        filteredDeck: [...filteredDeck],
+      });
+    });
+    if (value === 'todas') {
+      this.setState({ hasFilter: false });
+    }
+  }
 
   filterByTrunfo = () => {}
 
@@ -174,6 +192,18 @@ class App extends React.Component {
               onChange={ this.filterByName }
             />
           </label>
+          <select
+            id="rare"
+            data-testid="rare-filter"
+            name="cardRare"
+            onChange={ this.filterByRarity }
+          >
+            <option value="" disabled selected hidden>Raridade</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
+            <option value="todas">Todas</option>
+          </select>
         </form>
         <section className="deck-section">
           <Deck
