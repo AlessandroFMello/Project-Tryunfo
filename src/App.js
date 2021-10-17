@@ -129,7 +129,7 @@ class App extends React.Component {
     const { deck } = this.state;
     const filteredDeck = [];
     deck.forEach((card) => {
-      if (card.cardName.includes(value)) {
+      if (card.cardName.toLowerCase().includes(value.toLowerCase())) {
         filteredDeck.push(card);
       }
       this.setState({
