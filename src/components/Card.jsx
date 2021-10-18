@@ -20,13 +20,53 @@ class Card extends Component {
 
     return (
       <section className="card">
-        <h2 data-testid="name-card">{ cardName }</h2>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <h3 data-testid="description-card">{ cardDescription }</h3>
-        <h3 data-testid="attr1-card">{ cardAttr1 }</h3>
-        <h3 data-testid="attr2-card">{ cardAttr2 }</h3>
-        <h3 data-testid="attr3-card">{ cardAttr3 }</h3>
-        <h3 data-testid="rare-card">{ cardRare }</h3>
+        <div className="name-card">
+          <h2 data-testid="name-card">{ cardName }</h2>
+        </div>
+        <div className="image-card">
+          <img
+            data-testid="image-card"
+            src={ cardImage }
+            alt={ cardName }
+          />
+        </div>
+        <div>
+          <h3
+            data-testid="description-card"
+          >
+            { cardDescription }
+          </h3>
+        </div>
+        <div>
+          <h3
+            data-testid="attr1-card"
+            className="attr-card"
+          >
+            Atributo 1:
+            { cardAttr1 }
+          </h3>
+        </div>
+        <div>
+          <h3
+            data-testid="attr2-card"
+            className="attr-card"
+          >
+            Atributo 2:
+            { cardAttr2 }
+          </h3>
+        </div>
+        <div>
+          <h3
+            data-testid="attr3-card"
+            className="attr-card"
+          >
+            Atributo 3:
+            { cardAttr3 }
+          </h3>
+        </div>
+        <div>
+          <h3 data-testid="rare-card">{ cardRare }</h3>
+        </div>
         {
           cardTrunfo
             ? <h3 data-testid="trunfo-card"> Super Trunfo </h3>

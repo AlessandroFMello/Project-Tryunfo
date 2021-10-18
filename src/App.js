@@ -197,7 +197,7 @@ class App extends React.Component {
           </section>
         </div>
         <h1>Deck</h1>
-        <form>
+        <form className="filter-form">
           Filtros de busca
           <label className="inputs" htmlFor="name-filter">
             <input
