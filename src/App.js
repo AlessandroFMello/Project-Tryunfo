@@ -30,6 +30,7 @@ class App extends React.Component {
     this.deleteCardByName = this.deleteCardByName.bind(this);
     this.filterByName = this.filterByName.bind(this);
     this.filterByRarity = this.filterByRarity.bind(this);
+    this.filterByTrunfo = this.filterByTrunfo.bind(this);
   }
 
   onInputChange = ({ target }) => {
@@ -162,7 +163,22 @@ class App extends React.Component {
     }
   }
 
-  filterByTrunfo = () => {}
+  filterByTrunfo = ({ target }) => {
+    const { checked } = target;
+    const { deck, hasTrunfo } = this.state;
+    const trunfo = deck.find((card) => card.cardTrunfo === true);
+
+    if (checked && hasTrunfo) {
+      this.setState({
+        filteredDeck: [trunfo],
+        hasFilter: true,
+      });
+    }
+
+    if (!checked) {
+      this.setState({ hasFilter: false });
+    }
+  }
 
   render() {
     return (
@@ -204,6 +220,15 @@ class App extends React.Component {
             <option value="muito raro">Muito Raro</option>
             <option value="todas">Todas</option>
           </select>
+          <label htmlFor="trunfo-filter">
+            Trunfo
+            <input
+              data-testid="trunfo-filter"
+              id="trunfo-filter"
+              type="checkbox"
+              onChange={ this.filterByTrunfo }
+            />
+          </label>
         </form>
         <section className="deck-section">
           <Deck
