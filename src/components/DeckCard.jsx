@@ -6,12 +6,17 @@ class DeckCard extends Component {
     const { card, deleteCardByName } = this.props;
     return (
       <div className="card">
-        <h3>{ card.cardName }</h3>
-        <img src={ card.cardImage } alt={ card.cardName } />
+
+        <div className="name-card">
+          <h3>{ card.cardName }</h3>
+        </div>
+        <div className="image-card">
+          <img src={ card.cardImage } alt={ card.cardName } />
+        </div>
         <h3>{ card.cardDescription }</h3>
-        <h3>{ card.cardAttr1 }</h3>
-        <h3>{ card.cardAttr2 }</h3>
-        <h3>{ card.cardAttr3 }</h3>
+        <h3 className="attr-card">{ card.cardAttr1 }</h3>
+        <h3 className="attr-card">{ card.cardAttr2 }</h3>
+        <h3 className="attr-card">{ card.cardAttr3 }</h3>
         <h3>{ card.cardRare }</h3>
         {
           card.cardTrunfo

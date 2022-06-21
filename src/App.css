@@ -63,6 +63,11 @@
   width: 200px;
 }
 
+.image-card img {
+  height: 100%;
+  width: 100%;
+}
+
 .card h3 {
   align-items: flex-end;
   display: flex;

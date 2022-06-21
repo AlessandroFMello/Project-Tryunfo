@@ -70,7 +70,6 @@ class App extends React.Component {
       if (!card.cardTrunfo) {
         delete card.hasTrunfo;
       }
-
       return {
         deck: [...previousState.deck, card],
         cardName: '',
@@ -101,17 +100,13 @@ class App extends React.Component {
     const maxValue = 90;
     const minValue = 0;
     const maxSum = 210;
-
     const checkMinAttrValues = Number(cardAttr1) >= minValue
       && Number(cardAttr2) >= minValue
       && Number(cardAttr3) >= minValue;
-
     const checkMaxAttrValues = Number(cardAttr1) <= maxValue
       && Number(cardAttr2) <= maxValue
       && Number(cardAttr3) <= maxValue;
-
     const sum = (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3)) <= maxSum;
-
     return (checkMinAttrValues && checkMaxAttrValues && sum);
   }
 
@@ -129,15 +124,23 @@ class App extends React.Component {
   filterByName = ({ target }) => {
     const { value } = target;
     const { deck } = this.state;
-    const filteredDeck = [];
-    deck.forEach((card) => {
-      if (card.cardName.toLowerCase().includes(value.toLowerCase())) {
-        filteredDeck.push(card);
-      }
-      this.setState({
-        hasFilter: true,
-        filteredDeck: [...filteredDeck],
-      });
+    // const filteredDeck = [];
+    // deck.forEach((card) => {
+    //   if (card.cardName.toLowerCase().includes(value.toLowerCase())) {
+    //     filteredDeck.push(card);
+    //   }
+    //   this.setState({
+    //     hasFilter: true,
+    //     filteredDeck: [...filteredDeck],
+    //   });
+    // });
+    const filteredDeck = deck
+      .filter((card) => (
+        card.cardName.toLowerCase()
+          .includes(value.toLowerCase())));
+    this.setState({
+      hasFilter: true,
+      filteredDeck: [...filteredDeck],
     });
     if (!value) {
       this.setState({ hasFilter: false });

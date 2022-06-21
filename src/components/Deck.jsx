@@ -14,28 +14,29 @@ class Deck extends Component {
           deleteCardByName={ deleteCardByName }
         />))
     );
-
-    if (hasFilter) {
-      return (
-        <div>
-          <section>
-            {
-              myMap(filteredDeck)
-            }
-          </section>
-        </div>
-      );
-    }
+    // if (hasFilter) {
     return (
       <div>
         <section>
           {
-            myMap(deck)
+            // myMap(filteredDeck)
+            hasFilter ? myMap(filteredDeck) : myMap(deck)
           }
         </section>
       </div>
     );
   }
+  // }
+  //   return (
+  //     <div>
+  //       <section>
+  //         {
+  //           myMap(deck)
+  //         }
+  //       </section>
+  //     </div>
+  //   );
+  // }
 }
 
 export default Deck;
